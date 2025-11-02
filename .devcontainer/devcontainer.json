@@ -1,0 +1,37 @@
+{
+  "name": "cotizador-hexagonal-codespaces",
+  "image": "mcr.microsoft.com/devcontainers/java:1-21-bullseye",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "richardwillis.vscode-gradle",
+        "redhat.vscode-xml",
+        "ms-azuretools.vscode-docker",
+        "humao.rest-client"
+      ]
+    }
+  },
+  "forwardPorts": [
+    8080
+  ],
+  "portsAttributes": {
+    "8080": {
+      "label": "API",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "containerEnv": {
+    "DB_HOST": "db",
+    "DB_USER": "app",
+    "DB_PASS": "app",
+    "DB_NAME": "app"
+  },
+  "postCreateCommand": "docker compose up -d --build"
+}

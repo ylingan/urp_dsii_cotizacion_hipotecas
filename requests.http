@@ -1,0 +1,5 @@
+### Cotización hipotecaria (demo)
+GET http://localhost:8080/cotizaciones?monto=250000&plazoMeses=240&tipoCliente=PREMIUM
+
+### Ejemplo con monto diferente
+GET http://localhost:8080/cotizaciones?monto=180000&plazoMeses=180&tipoCliente=ESTANDARD
